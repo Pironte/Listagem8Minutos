@@ -112,4 +112,4 @@ import fs from 'fs';
         return [firstHalf, secondHalf];
     }
 })();
-//fim do codigo
+//fim do script
