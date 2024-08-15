@@ -115,3 +115,4 @@ import fs from 'fs';
         return [firstHalf, secondHalf];
     }
 })();
+//fim do script
