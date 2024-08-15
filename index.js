@@ -22,6 +22,7 @@ import fs from 'fs';
     await page.reload();
     await page.waitForTimeout(5000);
 
+    var count = 1;
     while (true) {
         console.clear(); // Limpa o console antes de cada nova atualização
         console.log("Capturando informações dos jogos de 8 Minutos...");
@@ -50,7 +51,8 @@ import fs from 'fs';
             var indexHandicap = 0;
             
             if(i > 0){
-                indexHandicap = i - 1;
+                indexHandicap = i - count;
+                count++;
             }
 
             const[listOddOne, listOddTwo] = await capturarHandicaps(page, indexHandicap);
@@ -65,6 +67,7 @@ import fs from 'fs';
 
         console.log('Informações capturadas com sucesso!');
         console.log("Aguardando 7 segundos para a próxima atualização...");
+        count = 1;
         await page.waitForTimeout(7000); // Espera 7 segundos antes de atualizar novamente
     }
 
